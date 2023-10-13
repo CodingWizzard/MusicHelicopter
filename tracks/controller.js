@@ -3,9 +3,9 @@ class Controller_Tracks {
         this.controller_tracks = [];
 
         this.controller_tracks.push(new Controller_Track(params, new Model_Sopran()));
-         this.controller_tracks.push(new Controller_Track(params, new Model_Mezzosopran()));
+        this.controller_tracks.push(new Controller_Track(params, new Model_Mezzosopran()));
         this.controller_tracks.push(new Controller_Track(params, new Model_Alt()));
-        
+
         this.state = this.state_idle;
     }
 

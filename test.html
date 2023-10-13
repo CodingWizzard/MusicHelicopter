@@ -8,16 +8,16 @@
     <script src="https://preview.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/cannon.js"></script>
 
-    <!-- <script src="tracks/model_LaudateOmnesGentes.js"></script> -->
-    <script src="tracks/model_SoundCheck.js"></script>
-    <script src="tracks/view_sound.js"></script>    
+    <script src="tracks/model_LaudateOmnesGentes.js"></script>
+    <!-- <script src="tracks/model_SoundCheck.js"></script> -->
+    <script src="tracks/view_sound.js"></script>
     <script src="tracks/controller_track.js"></script>
     <script src="tracks/controller.js"></script>
 
     <script src="krake/model.js"></script>
     <script src="krake/view.js"></script>
     <script src="krake/view_arm.js"></script>
-    <script src="krake/controller.js"></script>    
+    <script src="krake/controller.js"></script>
 
     <style>
         html,
@@ -51,31 +51,31 @@
             camera.upperBetaLimit = null;
             camera.lowerBetaLimit = null;
 
-            let params = {scene: scene};
+            let params = { scene: scene };
 
             let controller_Krake = new Controller_Krake(params);
             // controller_Krake.state = controller_Krake.state_start;
             params.controller_Krake = controller_Krake;
             let controller_Tracks = new Controller_Tracks(params);
-            
+
             // let box = BABYLON.MeshBuilder.CreateBox("", {width: 1, height: 1, depth: 1}, scene, true);
             scene.onPointerDown = (evt, pickResult) => {
                 // We try to pick an object
                 if (pickResult.hit) {
                     // pickResult.pickedMesh.name;
-                    controller_Tracks.state = controller_Tracks.state_start;  
-                    controller_Krake.state = controller_Krake.state_start;                  
+                    controller_Tracks.state = controller_Tracks.state_start;
+                    controller_Krake.state = controller_Krake.state_start;
                 }
             };
-            
-            
+
+
             scene.registerBeforeRender(function () {
                 controller_Tracks.update();
 
                 let index1 = 0;
                 let model1 = controller_Tracks.controller_tracks[0].model;
-                if (model1.index > -1 && model1.index < model1.melody.length-1)  {
-                    index1 = model1.melody[model1.index].note + 12*model1.melody[model1.index].pitch;
+                if (model1.index > -1 && model1.index < model1.melody.length - 1) {
+                    index1 = model1.melody[model1.index].note + 12 * model1.melody[model1.index].pitch;
                 }
 
                 controller_Krake.update();

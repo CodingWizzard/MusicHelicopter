@@ -93,18 +93,18 @@ class Model_Sopran {
     }
 }
 
-// class Model_Mezzosopran {
-//     constructor() {
+class Model_Mezzosopran {
+    constructor() {
 
-//         this.index = -1;
-//         this.melody = [];
+        this.index = -1;
+        this.melody = [];
 
-//         // this.melody.push({ note: d, pitch: 3, d1: 1, d2: 8 });
-//         // this.melody.push({ note: d, pitch: 3, d1: 5, d2: 8 });
-//         // this.melody.push({ note: z, pitch: 0, d1: 1, d2: 8 });
-//         // this.melody.push({ note: as, pitch: 2, d1: 1, d2: 8 });
-//     }
-// }
+        this.melody.push({ note: d, pitch: 3, d1: 1, d2: 8 });
+        this.melody.push({ note: d, pitch: 3, d1: 5, d2: 8 });
+        this.melody.push({ note: z, pitch: 0, d1: 1, d2: 8 });
+        this.melody.push({ note: as, pitch: 2, d1: 1, d2: 8 });
+    }
+}
 
 class Model_Alt {
     constructor() {
